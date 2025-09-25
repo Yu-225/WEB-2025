@@ -1,0 +1,113 @@
+
+body {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+.btn {
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #FF6B0A;
+    color: #FFF;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #ff0a0a;
+    cursor: pointer;    
+}
+
+
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(334deg, rgba(0, 0, 0, 0.82) 29.42%, rgba(255, 0, 0, 0.82) 69.53%);
+    padding: 25px 0 0 95px;
+    display: flex;
+    gap: 45px;
+    justify-content: center;
+}
+
+
+.hero-logo {
+    display: flex;
+    gap: 16px;
+    background: #fff;
+    padding: 19px 18px;
+    max-width: 276px;
+}
+
+.hero-card {
+    background: #fff;
+    padding: 48px 44px;
+    margin-top: 25px;
+    max-width: 580px;
+}
+
+.logo-text {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.hero-evning {
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    color: #FF6B0A;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 18px;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 600;
+    margin-top: 48px;
+}
+
+.hero-text {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+
+/* TABLE SECTION */
+.table-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+}
+.table-section-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    margin-top: 64px;
+}
+
+.table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+.table {
+    width: 800px;
+}
+
+.table th {
+    background-color: #FF6B0A;
+    color: white;
+    text-align: left;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
