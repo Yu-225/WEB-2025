@@ -1,4 +1,5 @@
-fetch('shared/html/head.html')
+
+fetch('../shared/html/head.html')
   .then(r => r.text())
   .then(html => {
     document.head.insertAdjacentHTML('afterbegin', html);
