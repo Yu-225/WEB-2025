@@ -1,6 +1,4 @@
 
-console.log(document.baseURI);
-
 fetch('shared/html/navbar.html')
 .then(response => response.text())
 .then(html => {
