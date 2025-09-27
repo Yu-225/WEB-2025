@@ -1,5 +1,7 @@
 
-fetch('/shared/html/navbar.html')
+console.log(document.baseURI);
+
+fetch('shared/html/navbar.html')
 .then(response => response.text())
 .then(html => {
     document.getElementById('navbar-container').innerHTML = html;
