@@ -4,17 +4,176 @@
     <script src="../shared/js/head.js"></script>
     <script src="../shared/js/navbar.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/f452764e5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="navbar-container"></div>
 
     <main>
-        <!-- <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
-            Помилка 404:<br>
-            Лабораторна робота №4 не знайдена
-        </h1> -->
+        <input id="slider" type="range" min="0" max="100" value="0" style="width:100%; margin: 10px auto;">
 
-        <section>
+        
+        <section id="raster-section">
+            <h2>Растрова графіка</h2>
+            <p>Растрова графіка складається з пікселів — дрібних точок, кожна з яких має власний колір.
+                Такі зображення мають фіксовану роздільну здатність, тому при збільшенні можуть втрачати якість.
+                Растрова графіка чудово підходить для фотографій, сканів і складних колірних градієнтів.</p>
+            
+            <h3>Приклади використання:</h3>
+            <ul>
+                <li>Фото з камери</li>
+                <li>Картини, малюнки, цифровий живопис</li>
+                <li>Текстури в іграх</li>
+            </ul>
+
+            <h3>Популярні формати:</h3>
+            <ul>
+                <li>JPG — менший розмір за рахунок стиснення, але втрачається якість</li>
+                <li>PNG — без втрат, підтримує прозорість</li>
+                <li>GIF — підтримка прозорості та анімації</li>
+                <li>WEBP — сучасний формат, що поєднює переваги інших форматів</li>
+            </ul>
+        </section>
+
+
+        <section id="vector-section">
+            <h2>Векторна графіка</h2>
+            <p>Векторна графіка складається з ліній, кривих і геометричних фігур, описаних математичними формулами.
+                Вона не втрачає якість при масштабуванні, тому її файно використовувати для логотипів, іконок, шрифтів та креслень.</p>
+            
+            <h3>Приклади використання:</h3>
+            <ul>
+                <li>Логотипи компаній</li>
+                <li>Іконки в інтерфейсах</li>
+                <li>Інфографіка, схеми, діаграми</li>
+            </ul>
+
+            <h3>Популярні формати:</h3>
+            <ul>
+                <li>SVG — підтримує масштабування та анімацію</li>
+                <li>EPS, PDF — професійна поліграфія</li>
+                <li>AI — формат Adobe Illustrator</li>
+                <li>CDR — формат CorelDRAW</li>
+            </ul>
+        </section>
+
+        <section id="table-section">
+            <h2>Таблиця з порівнянням форматів</h2>
+            <table class="table">
+                <tr>
+                    <th>Формат</th>
+                    <th>Тип</th>
+                    <th>Прозорість</th>
+                    <th>Стиснення</th>
+                    <th>Масштабування</th>
+                    <th>Використання</th>
+                </tr>
+                <tr>
+                    <td>JPG</td>
+                    <td>Растровий</td>
+                    <td><i class="fa-solid fa-xmark"></i></td>
+                    <td>З втратами</td>
+                    <td><i class="fa-solid fa-xmark"></i></td>
+                    <td>Фото</td>
+                </tr>
+                <tr>
+                    <td>PNG</td>
+                    <td>Растровий</td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td>Без втрат</td>
+                    <td><i class="fa-solid fa-xmark"></i></td>
+                    <td>Зображення з прозорістю</td>
+                </tr>
+                <tr>
+                    <td>GIF</td>
+                    <td>Растровий</td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td>Без втрат</td>
+                    <td><i class="fa-solid fa-xmark"></i></td>
+                    <td>Анімації</td>
+                </tr>
+                <tr>
+                    <td>WEBP</td>
+                    <td>Растровий</td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td>Оптимізоване</td>
+                    <td><i class="fa-solid fa-xmark"></i></td>
+                    <td>Веб-графіка</td>
+                </tr>
+                <tr>
+                    <td>SVG</td>
+                    <td>Векторний</td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td>Математичне</td>
+                    <td><i class="fa-solid fa-check"></i></td>
+                    <td>Іконки, логотипи</td>
+                </tr>
+                
+            </table>
+        </section>
+
+        <section id="examples-section">
+            <h2>Приклади зображень</h2>
+            
+            <h3>Порівняння растврового та векторного зображення</h3>
+
+            <div class="raster-vecor-container">
+                <div class="raster-example">
+                    <h3>Растрове зображення (PNG)</h3>
+                    <img src="./img/smiling-face-with-hearts-svgrepo-com.png" alt="raster example">
+                </div>
+                <div class="vector-example">
+                    <h3>Векторне зображення (SVG)</h3>
+                    <img src="./svg/smiling-face-with-hearts-svgrepo-com.svg" alt="vector example">
+                </div>
+
+            </div>
+
+            <h3>Порівняння png та jpg</h3>
+
+            <div class="png-jpg-container">
+                <div class="png-example">
+                    <img src="./img/Tag @ryanbreitkreutz - Free files from @signatureeditsco DSC05627.png" alt="cat png" width="400px">
+                    <p>PNG<br>21.2 MB<br>Прозорий фон</p>
+                </div>
+                <div class="jpg-example">
+                    <img src="./img/Tag @ryanbreitkreutz - Free files from @signatureeditsco DSC05627.jpg" alt="cat jpg" width="400px">
+                    <p>JPG<br>1.28 MB<br>Білий, або чорний фон</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="css-anim-section">
+            <h2>Анімація з допомогою CSS</h2>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="vELxMrg" data-pen-title="Sun" data-user="Yu-225" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/Yu-225/pen/vELxMrg">
+            Sun</a> by Yurii (<a href="https://codepen.io/Yu-225">@Yu-225</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://public.codepenassets.com/embed/index.js"></script>
+        </section>
+
+        <section class="js-anim-section">
+            <h2>Анімація з допомогою JS</h2>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="XJXMwbb" data-pen-title="Untitled" data-user="Yu-225" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/Yu-225/pen/XJXMwbb">
+            Untitled</a> by Yurii (<a href="https://codepen.io/Yu-225">@Yu-225</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+        </section>
+
+
+
+
+
+
+        <details>
+            <summary>Стара версія лабораторної</summary>
+            
+            <section>
             <div class="meme-container">
                 <h1>Редаговане зображення у фотошопі</h1>
                 <img src="./img/up.jpg" alt="pivo" width="500px">
@@ -55,8 +214,27 @@
             <img class="heart" src="./svg/icons/heart6.svg" alt="heart">
             <p>/\ ось це я сам пробував прописати svg</p>
         </section>
-
-
+        </details>
     </main>
+
+
+    <script>
+        const slider = document.getElementById('slider');
+        const body = document.body;
+
+        function updateTheme(value) {
+            const brightness = 100 - value;
+            const color = `hsl(220, 30%, ${brightness}%)`; 
+            body.style.backgroundColor = color;
+
+            body.style.color = (brightness < 50) ? '#fff' : '#000';
+            }
+
+            slider.addEventListener('input', (e) => {
+            updateTheme(e.target.value);
+        });
+
+        updateTheme(slider.value);
+    </script>
 </body>
 </html>

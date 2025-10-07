@@ -1,4 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
 
+h1 {
+    margin-top: 142px;
+    text-align: center;
+    font-size: 42px;
+}
+
+main {
+    max-width: 1100px;
+    margin: 100px auto;
+    background-color: #eeeeee44;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
 .meme-container {
     display: flex; 
@@ -70,6 +88,13 @@
 .planets-container img:nth-child(8) { animation-delay: 7s; }
 .planets-container img:nth-child(9) { animation-delay: 8s; }
 
+.heart {
+    width: 200px;
+    height: 200px;
+    fill: red;
+    color: red;
+}
+
 
 @keyframes rotate {
     from {transform: rotate(0deg);}
@@ -84,22 +109,93 @@
 
 
 
-.heart {
-    width: 200px;
-    height: 200px;
-    fill: red;
-    color: red;
+.raster-vecor-container {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px;
+    
+
 }
 
-h1 {
-    margin-top: 142px;
+.raster-example, .vector-example {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.raster-example img, .vector-example img {
+    margin-top: 30px;
+    width: 300px;
+    height: auto;
+    
+    animation: zoom 15s infinite alternate;
+
+}
+
+
+@keyframes zoom {
+    0% {transform: scale(1);}
+    15% {transform: scale(2);}
+    45% {transform: scale(5) translateX(66px) translateY(40px);}
+    55% {transform: scale(5) translateX(66px) translateY(40px);}
+    85% {transform: scale(2);}
+    100% {transform: scale(1);}   
+}
+
+.png-jpg-container {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px;
+    border-radius: 20px;
+}
+
+.png-example img, .jpg-example img {
+    overflow: hidden;
+    border-radius: 10px;
+    animation: rainbow-bg 30s infinite linear;
+    padding: 20px;
+}
+
+
+@keyframes rainbow-bg {
+    0% {background-color: red;}
+    14% {background-color: orange;}
+    28% {background-color: yellow;}
+    42% {background-color: green;}
+    57% {background-color: blue;}
+    71% {background-color: indigo;}
+    85% {background-color: violet;}
+    100% {background-color: red;}
+}
+
+
+h2 {
+    font-size: 30px;
+    margin-top: 42px;
+    margin-left: 20px;
+}
+h3 {
+    font-size: 22px;
+    margin-top: 42px;
+    margin-left: 20px;
+}
+p {
+    max-width: 70%;
+    margin: 5px 20px;
+}
+
+ul {
+    margin: 5px 25px;
+}
+li::before {
+    content: '❤︎ ';
+}
+
+.table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 8px;
     text-align: center;
-    font-size: 42px;
 }
-
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    background-color: #eeeeee44;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
+.table { margin: 0 auto; }
