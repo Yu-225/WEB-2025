@@ -4,26 +4,256 @@
     <script src="../shared/js/head.js"></script>
     <script src="../shared/js/navbar.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/prism.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/f452764e5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="navbar-container"></div>
 
     <main>
-        <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
+        <!-- <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
             Помилка 404:<br>
             Лабораторна робота №5 не знайдена
-        </h1>
+        </h1> -->
 
 
-        <pre>
+        <!-- <pre>
             <code>
 print("Hello, World!")
 def greet(name):
     return f"Hello, {name}!"
 print(greet("World"))
             </code>
-        </pre>
+        </pre> -->
 
-    </main>
+        <section class="font-sources-section">
+            <h1>Джерела шрифтів</h1>
+
+            <div>
+                <h3>Вбудовані шрифти</h3>
+                <p>Вбудовані шрифти називають безпечними, бо вони одразу встановленні у систему і однаково відображаються на різних пристроях</p>
+
+                <h4 class="f-serif">Приклад використання шрифту serif:</h4>
+                <p class="f-serif">Квітневе проміння розливається між пагорбами, торкаючись кожного листка, немов ніжний подих весни. Стародавні хмари пливуть понад долинами, несячи у собі мелодію далекого часу. Мандрівник іде стежкою, вслухаючись у шепіт трав і дзвін джерельної води, що нагадує про нескінченний рух життя. У тиші лісу народжуються думки, сплітаючись із ароматом землі та подихом вітру, створюючи гармонію, де слова зникають, а залишається лише відчуття істини.</p> 
+                <div class="double-code-block">
+                    <pre><code class="language-html">&lt;p class="f-serif"&gt;Текст з шрифтом serif&lt;/p&gt;</code></pre>
+                    <pre><code class="language-css">.f-serif { font-family: serif; }</code></pre>
+                </div>
+
+                <h4 class="f-sans-serif">Приклад використання шрифту sans-serif:</h4>
+                <p class="f-sans-serif">Квітневе проміння розливається між пагорбами, торкаючись кожного листка, немов ніжний подих весни. Стародавні хмари пливуть понад долинами, несячи у собі мелодію далекого часу. Мандрівник іде стежкою, вслухаючись у шепіт трав і дзвін джерельної води, що нагадує про нескінченний рух життя. У тиші лісу народжуються думки, сплітаючись із ароматом землі та подихом вітру, створюючи гармонію, де слова зникають, а залишається лише відчуття істини.</p>
+                <div class="double-code-block">
+                    <pre><code class="language-html">&lt;p class="f-sans-serif"&gt;Текст з шрифтом sans-serif&lt;/p&gt;</code></pre>
+                    <pre><code class="language-css">.f-sans-serif { font-family: sans-serif; }</code></pre>
+                </div>
+
+                <h4 class="f-mono">Приклад використання шрифту monospace:</h4>
+                <p class="f-mono">Квітневе проміння розливається між пагорбами, торкаючись кожного листка, немов ніжний подих весни. Стародавні хмари пливуть понад долинами, несячи у собі мелодію далекого часу. Мандрівник іде стежкою, вслухаючись у шепіт трав і дзвін джерельної води, що нагадує про нескінченний рух життя. У тиші лісу народжуються думки, сплітаючись із ароматом землі та подихом вітру, створюючи гармонію, де слова зникають, а залишається лише відчуття істини.</p>
+                <div class="double-code-block">
+                    <pre><code class="language-html">&lt;p class="f-mono"&gt;Текст з шрифтом monospace&lt;/p&gt;</code></pre>
+                    <pre><code class="language-css">.f-mono { font-family: monospace; }</code></pre>
+                </div>
+            </div>
+
+            <div>
+                <h3>Локальні шрифти</h3>
+                <p>Локальні шрифти - це шрифти, які зберігаються на комп'ютері або сервері. Їх можна підключити до веб-сторінки за допомогою CSS.</p>
+
+                <h4>Приклад підключення та використання локальних шрифтів:</h4>
+                <pre><code class="language-css">@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RubikWetPaint';
+    src: url('../fonts/RubikWetPaint/RubikWetPaint-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'YuFV1-Regular';
+    src: url('../fonts/Yuf/YufV1-Regular.ttf') format('truetype'),
+         url('../fonts/Yuf/YufV1-Regular.otf') format('opentype');
+}
+
+.f-ubuntu { font-family: 'Ubuntu'; }
+
+.f-RubikWetPaint { font-family: 'RubikWetPaint'; }
+
+.f-YuFV1-Regular { font-family: 'YuFV1-Regular'; }</code></pre>
+
+                <p class="f-ubuntu" style="color: rgb(0, 100, 0);">Шрифт Ubuntu:</p>
+                <p class="f-ubuntu" style="color: rgb(0, 100, 0);">Квітневе проміння розливається між пагорбами, торкаючись кожного листка, немов ніжний подих весни. Стародавні хмари пливуть понад долинами, несячи у собі мелодію далекого часу. Мандрівник іде стежкою, вслухаючись у шепіт трав і дзвін джерельної води, що нагадує про нескінченний рух життя. У тиші лісу народжуються думки, сплітаючись із ароматом землі та подихом вітру, створюючи гармонію, де слова зникають, а залишається лише відчуття істини.</p>
+                <hr>
+                <p class="f-RubikWetPaint blood">Шрифт Rubik Wet Paint:</p>
+                <p class="f-RubikWetPaint blood">Квітневе проміння розливається між пагорбами, торкаючись кожного листка, немов ніжний подих весни. Стародавні хмари пливуть понад долинами, несячи у собі мелодію далекого часу. Мандрівник іде стежкою, вслухаючись у шепіт трав і дзвін джерельної води, що нагадує про нескінченний рух життя. У тиші лісу народжуються думки, сплітаючись із ароматом землі та подихом вітру, створюючи гармонію, де слова зникають, а залишається лише відчуття істини.</p>
+                <hr>
+                <p class="f-YuFV1-Regular" style="color: rgb(0, 0, 100);">Шрифт Yurii's Font Version 1 - Regalar (YuFV1-Regular):</p>
+                <p class="f-YuFV1-Regular" style="color: rgb(0, 0, 100);">Квітневе проміння розливається між пагорбами, торкаючись кожного листка, немов ніжний подих весни. Стародавні хмари пливуть понад долинами, несячи у собі мелодію далекого часу. Мандрівник іде стежкою, вслухаючись у шепіт трав і дзвін джерельної води, що нагадує про нескінченний рух життя. У тиші лісу народжуються думки, сплітаючись із ароматом землі та подихом вітру, створюючи гармонію, де слова зникають, а залишається лише відчуття істини.</p>
+
+
+            </div>
+
+            <div>
+                <h3>Ґуґл шрифти</h3>
+                <p>Google Fonts - це безкоштовна бібліотека веб-шрифтів, яку можна використовувати на веб-сайтах. Вона пропонує широкий вибір шрифтів, які можна легко підключити до веб-сторінки за допомогою посилання.</p>
+
+                <h4>Приклад використання Google Fonts:</h4>
+
+                <p class="press-start-2p-regular"> Press Start 2P</p>
+                <p class="press-start-2p-regular">Підключений через HTML:</p>
+                <pre><code class="language-html">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"&gt;</code></pre>
+                <pre><code class="language-css">.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}</code></pre>
+
+                <p class="rubik-glitch-regular">Rubik Glitch</p>
+                <p class="rubik-glitch-regular">Підключений через CSS:</p>
+                <pre><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}</code></pre>
+            </div>
+
+            <div>
+                <h3>Іконкові шрифти</h3>
+                <p>Іконкові шрифти - це спеціальні шрифти, які містять іконки замість букв. Вони дозволяють легко додавати іконки до веб-сторінок за допомогою CSS.</p>
+
+                <h4>Приклад використання іконкових шрифтів (FontAwesome):</h4>
+                <p>Для початку потрібно зареєструватись та створити новий набір, та підключити його до сторінки з допомогою згенерованого скрипта:</p>
+                <pre><code class="language-html">&lt;script src="https://kit.fontawesome.com/f452764e5f.js" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+                <p>Після підключення можна використовувати іконки в HTML:</p>
+                <pre><code class="language-html">&lt;i class="fas fa-camera"&gt;&lt;/i&gt;</code></pre>
+                
+                <h4>Приклади застосування:</h4>
+                <p>Соціальні мережі</p>
+                <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+
+                <hr>
+                <p>Меню</p>
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-chevron-right"></i> 
+
+                <hr>
+                <p>Кнопки дій</p>
+                <button><i class="fas fa-shopping-cart"></i> Купити</button>
+                <button><i class="fas fa-search"></i> Пошук</button>
+                <button><i class="fas fa-heart"></i> Лайк</button>
+
+                <hr>
+                <p>Інтерфейс</p>
+                <i class="far fa-star"></i> 4.5 рейтинг
+                <i class="fas fa-bell"></i> Оповіщення
+                <i class="fas fa-heart"></i> Улюблене
+
+
+
+                <hr>
+                <p>Інтерактивні елементи</p>
+                <i class="fas fa-moon"></i> Темна тема
+                <i class="fas fa-play"></i> Відтворити
+                <i class="fas fa-pause"></i> Пауза
+
+            </div>
+
+
+
+
+        </section>
+
+        <section class="customization-section">
+             <h1>Кастомізація шрифтів</h1>
+
+            <p style="font-family: 'Arial', sans-serif; font-size: 10px; color: #333;">
+                Це звичайний текст у Arial, 10px, темно-сірий.
+            </p>
+
+            <p style="font-family: 'Courier New', monospace; font-size: 20px; color: #007BFF;">
+                Текст у моноширинному шрифті, 20px, синій.
+            </p>
+
+            <p>
+                Іконки Font Awesome:
+                <i class="fas fa-heart" style="color:red; font-size:24px;"></i>
+                <i class="fas fa-star" style="color:gold; font-size:48px;"></i>
+                <i class="fas fa-smile" style="color:green; font-size:64px;"></i>
+            </p>
+        </section>
+
+        <section class="effects-section">
+            <h1>Інтерактивна зміна шрифтів</h1>
+
+            <p id="interactive-text" style="font-size:20px; color:#333; cursor:pointer;">
+                Інтерактивна зміна тексту (Розмір: 20px)
+            </p>
+
+            <p>Розмір </p>
+            <input id="slider-size" type="range" min="20" max="100" value="0" style="width: 400px; margin: 10px auto;">
+
+            <p>R </p>
+            <input id="slider-R" type="range" min="1" max="255" value="0" style="width: 400px; margin: 10px auto;">
+
+            <p>G </p>
+            <input id="slider-G" type="range" min="1" max="255" value="0" style="width: 400px; margin: 10px auto;">
+
+            <p>B </p>
+            <input id="slider-B" type="range" min="1" max="255" value="0" style="width: 400px; margin: 10px auto;">
+
+            
+        </section>
+
+
+
+    <script>
+        const sliderSize = document.getElementById('slider-size');
+        const interactiveText = document.getElementById('interactive-text');
+
+        sliderSize.addEventListener('input', () => {
+            interactiveText.style.fontSize = sliderSize.value + 'px';
+            interactiveText.textContent = `Інтерактивна зміна тексту (Розмір: ${sliderSize.value}px)`;
+        });
+
+        const sliderR = document.getElementById('slider-R');
+        const sliderG = document.getElementById('slider-G');
+        const sliderB = document.getElementById('slider-B');
+        
+        function updateColor() {
+            const r = sliderR.value;
+            const g = sliderG.value;
+            const b = sliderB.value;
+            interactiveText.style.color = `rgb(${r}, ${g}, ${b})`;
+        }
+        
+        sliderR.addEventListener('input', updateColor);
+        sliderG.addEventListener('input', updateColor);
+        sliderB.addEventListener('input', updateColor);
+
+
+        interactiveText.addEventListener('click', () => {
+
+            fontList = ['Arial', 'Courier New', 'Ubuntu', 'Rubik Wet Paint', 'YuFV1-Regular', 'Press Start 2P', 'Rubik Glitch'];
+            
+            const randomFont = fontList[Math.floor(Math.random() * fontList.length)];
+            
+            interactiveText.style.fontFamily = randomFont
+        });
+
+
+    </script>
+
+    <script src="./js/prism.js"></script>
 </body>
 </html>

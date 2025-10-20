@@ -236,5 +236,29 @@
 
         updateTheme(slider.value);
     </script>
+
+    <script>
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function changeTitle(titleFull) {
+        var typingSymbol = "▎"
+        var titleText = ""
+        const delay = 120;
+
+        for (let i = 0; i < titleFull.length; i++) {
+            titleText += typingSymbol;
+            await sleep(delay);
+            document.title = titleText;
+
+            titleText = titleText.replace(typingSymbol, titleFull[i]);
+            await sleep(delay);
+            document.title = titleText;
+        }
+    }
+
+    changeTitle('Лабораторна робота 4 - Графіка та анімація');
+    </script>
 </body>
 </html>
