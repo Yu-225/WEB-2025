@@ -3,15 +3,259 @@
 <head>
     <script src="../shared/js/head.js"></script>
     <script src="../shared/js/navbar.js"></script>
+    
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div id="navbar-container"></div>
 
     <main>
-        <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
-            Помилка 404:<br>
-            Лабораторна робота №6 не знайдена
-        </h1>
+        <section id="maps-section">
+            <h1>Картографічні сервіси</h1>
+            <p>Приклади вставки інтерактивних карт за допомогою API популярних сервісів.</p>
+        
+            <h3>Google Maps</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d644.0099611610302!2d24.057520638557346!3d49.78531563263846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae868841248b7%3A0xcb1d48595dbdb1aa!2z0J3QsNGA0L7QtNC90LjQuSDRgNC40L3QvtC6!5e0!3m2!1suk!2sua!4v1761068329207!5m2!1suk!2sua"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+            <p>По справжньому Легендарне Місце Сили на Сихові:</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1761068030364!6m8!1m7!1siwZjSuUY_8tBAt_8BJhbrA!2m2!1d49.78498172691163!2d24.05911422386524!3f159.87993627582782!4f10.05614489581103!5f0.4000000000000002"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <p>Дорога до Стрийського парку</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d24811.815677996838!2d24.022350608176517!3d49.80366231497935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x473ae868841248b7%3A0xcb1d48595dbdb1aa!2z0J3QsNGA0L7QtNC90LjQuSDRgNC40L3QvtC6!3m2!1d49.785277799999996!2d24.0580555!4m5!1s0x473ae7869780ac25%3A0x224b7faf97b2fc5f!2zS2lsaW5za2ksINCh0YLRgNC40LnRgdGM0LrQuNC5INCf0LDRgNC6LCDQsdGW0LvRjyDRhNC-0L3RgtCw0L3Rgywg0LLRg9C70LjRhtGPINCj0LvQsNGB0LAg0KHQsNC80YfRg9C60LAsIDE2LCDQm9GM0LLRltCyLCDQm9GM0LLRltCy0YHRjNC60LAg0L7QsdC70LDRgdGC0YwsIDc5MDI2!3m2!1d49.821995099999995!2d24.0279587!5e1!3m2!1suk!2sua!4v1761068963643!5m2!1suk!2sua"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+
+            <h3>Bing Maps</h3>
+            <div style="height:400px;width:600px;">
+                <div id="bing-map" style="width: 100%; height: 100%;"></div>
+            </div>
+            <script>function loadMap() { var map = new Microsoft.Maps.Map(document.getElementById("bing-map"), { zoom: 13, mapTypeId: Microsoft.Maps.MapTypeId.road }); Microsoft.Maps.loadModule("Microsoft.Maps.Search", function () { var searchManager = new Microsoft.Maps.Search.SearchManager(map); var requestOptions = { bounds: map.getBounds(), where: "Lviv", callback: function (answer, userData) { map.setView({ center: new Microsoft.Maps.Location(answer.results[0].location.latitude, answer.results[0].location.longitude) }); map.entities.push(new Microsoft.Maps.Pushpin(answer.results[0].location)); } }; searchManager.geocode(requestOptions); }); }</script>
+            <script type="text/javascript"
+                src="https://www.bing.com/api/maps/mapcontrol?key=AkLj1p_g1w7lFb8lJZ-XnicObnu2-ydEpmn6eryraluxl_x3bDo0Jx6w58b7ZJt2&callback=loadMap"
+                async defer></script><a href="https://bingmapsgenerator.github.io" style="display:none;">bing map generator</a>
+        
+            <h3>OpenStreetMap</h3>
+            <iframe width="425" height="350"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=24.044480323791507%2C49.7910882569456%2C24.048838913440708%2C49.79259470033528&amp;layer=mapnik&amp;marker=49.79184148449747%2C24.04666095972061"
+                style="border: 1px solid black">
+            </iframe>
+            <br />
+            <small><a
+                    href="https://www.openstreetmap.org/?mlat=49.791841&amp;mlon=24.046661#map=19/49.791841/24.046660">Переглянути
+                    більшу мапу
+                </a>
+            </small>
+        </section>
+
+        <section id="video-section">
+            <h1>Відео з мережі</h1>
+            <p>Вбудовування відео з YouTube та Vimeo за допомогою iframe:</p>
+        
+            <h3>YouTube</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tadUeiNe5-g?si=cVz9fN2-RJSoVBjb"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        
+            <h3>Vimeo</h3>
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/767046013?h=edafcd7ab5" width="640" height="360"
+                frameborder="0" referrerpolicy="strict-origin-when-cross-origin"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+
+        <section id="audio-section">
+            <h1>Відтворення аудіо</h1>
+            <h3>Використання тегу audio:</h3>
+        
+            <audio controls>
+                <source src="./audio/Pufino - Fantasy (freetouse.com).mp3" type="audio/mp3">
+            </audio>
+
+            <audio controls>
+                <source src="./audio/Alegend - Emotional Moments (freetouse.com).mp3" type="audio/mp3">
+            </audio>
+        
+            <h3>Аудіо з онлайн ресурсів</h3>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A60153564&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
+            <div
+                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                <a href="https://soundcloud.com/flit-albums" title="Flit Albums" target="_blank"
+                    style="color: #cccccc; text-decoration: none;">Flit Albums</a> · <a
+                    href="https://soundcloud.com/flit-albums/15-1" title="15 - Їжачок" target="_blank"
+                    style="color: #cccccc; text-decoration: none;">
+                    15 - Їжачок
+                </a>
+            </div>
+
+
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/0w5QAcxm2NJDdoCuefrK1a?utm_source=generator&theme=0" width="100%"
+                height="352" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+        </section>
+
+
+        <section id="social-widgets">
+            <h1>Віджети соціальних мереж</h1>
+            <h3>Вставлені інтерактивні плагіни з Discord, Linkedin та Instagram.</h3>
+
+            <iframe src="https://discord.com/widget?id=804856048757899284&theme=dark" width="350" height="500"
+                allowtransparency="true" frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+            </iframe>
+        
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7386460616728891392?collapsed=1" height="575"
+                width="504" frameborder="0" allowfullscreen="" title="Вбудований допис">
+            </iframe>
+        
+            <blockquote class="instagram-media" data-instgrm-captioned
+                data-instgrm-permalink="https://www.instagram.com/p/DPi39_7jC3b/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="14"
+                style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                <div style="padding:16px;"> <a
+                        href="https://www.instagram.com/p/DPi39_7jC3b/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                        target="_blank">
+                        <div style=" display: flex; flex-direction: row; align-items: center;">
+                            <div
+                                style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                            </div>
+                            <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                <div
+                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                </div>
+                                <div
+                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 19% 0;"></div>
+                        <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px"
+                                viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg"
+                                xmlns:xlink="https://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                        <g>
+                                            <path
+                                                d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg></div>
+                        <div style="padding-top: 8px;">
+                            <div
+                                style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                Переглянути цей допис в Instagram</div>
+                        </div>
+                        <div style="padding: 12.5% 0;"></div>
+                        <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                            <div>
+                                <div
+                                    style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                                </div>
+                                <div
+                                    style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                                </div>
+                                <div
+                                    style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                                </div>
+                            </div>
+                            <div style="margin-left: 8px;">
+                                <div
+                                    style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                                </div>
+                                <div
+                                    style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                                </div>
+                            </div>
+                            <div style="margin-left: auto;">
+                                <div
+                                    style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                                </div>
+                                <div
+                                    style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                                </div>
+                                <div
+                                    style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                            <div
+                                style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                            </div>
+                            <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                            </div>
+                        </div>
+                    </a>
+                    <p
+                        style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                        <a href="https://www.instagram.com/p/DPi39_7jC3b/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                            target="_blank">Допис, поширений Scribbly G (@scribbly_g)</a></p>
+                </div>
+            </blockquote>
+            <script async src="//www.instagram.com/embed.js"></script>
+        </section>
+
+        <section id="informers">
+            <h1>Інформери</h1>
+            <p>Приклади інтерактивних інформерів: погода, час та курс валют.</p>
+            
+            <h3>Погода</h3>
+            <a class="weatherwidget-io" href="https://forecast7.com/uk/49d8424d03/lviv/" data-label_1="LVIV" data-label_2="WEATHER"
+                data-theme="original">LVIV WEATHER
+            </a>
+            <script>
+                !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+            </script>
+            
+            <h3>Час</h3>
+            <div class="cleanslate w24tz-current-time w24tz-middle"
+                style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
+                <p><a href="//24timezones.com/uk_time/ukraine_lviv_clock.php" style="text-decoration: none" class="clock24"
+                        id="tz24-1761106046-c215932-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIxIiwic2hvd3NlY29uZHMiOiIxIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2OGY4NTg3ZTkwOGFjIiwidHlwZSI6ImRiIiwibGFuZyI6InVrIn0="
+                        title="час Львів" target="_blank" rel="nofollow">Час у Львові</a></p>
+                <div id="clock_block_cb68f8587e908ac"></div>
+            </div>
+            <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+            
+            <h3>Курс валют</h3>
+            <!-- Minfin.com.ua currency informer 350x120 blue-->
+            <div id="minfin-informer-m1Fn-currency">Завантажуємо <a href="https://minfin.com.ua/ua/currency/" target="_blank">курси
+                    валют</a> від minfin.com.ua</a></div>
+            <script>var iframe = '<ifra' + 'me width="350" height="120" fram' + 'eborder="0" src="https://informer.minfin.com.ua/ua/gen/course/?color=blue" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:350px;height:120px;ove' + 'rflow:hidden;"></iframe>'; var cl = 'minfin-informer-m1Fn-currency'; document.getElementById(cl).innerHTML = iframe; </script>
+            <noscript><img src="https://informer.minfin.com.ua/gen/img.png" width="1" height="1" alt="minfin.com.ua: курси валют"
+                    title="Курс валют" border="0" /></noscript>
+            <!-- Minfin.com.ua currency informer 350x120 blue-->
+            <!-- Minfin.com.ua calc informer 200x112 violet-->
+            <div id="minfin-informer-m1Fn-calc">Завантажуємо <a href="https://minfin.com.ua/ua/currency/" target="_blank">курси
+                    валют</a> від minfin.com.ua</a></div>
+            <script>var iframe = '<ifra' + 'me width="200" height="112" fram' + 'eborder="0" src="https://informer.minfin.com.ua/ua/gen/calc/nbu/?color=violet" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:200px;height:112px;ove' + 'rflow:hidden;"></iframe>'; var cl = 'minfin-informer-m1Fn-calc'; document.getElementById(cl).innerHTML = iframe; </script>
+            <noscript><img src="https://informer.minfin.com.ua/gen/img.png" width="1" height="1" alt="minfin.com.ua: курси валют"
+                    title="Курс валют" border="0" /></noscript>
+            <!-- Minfin.com.ua calc informer 200x112 violet-->
+        </section>
     </main>
 </body>
 </html>
