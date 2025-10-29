@@ -1,17 +1,190 @@
 <!DOCTYPE html>
 <html lang="ua">
 <head>
-    <script src="../shared/js/head.js"></script>
-    <script src="../shared/js/navbar.js"></script>
+
+
+    <!-- Prism.js -->
+    <link rel="stylesheet" href="./css/prism.css">
+    <script src="./js/prism.js"></script>
+    
+    <!-- jQuery прикольчики -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
+        integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+
+    <!-- Tiny Slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div id="navbar-container"></div>
 
     <main>
-        <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
-            Помилка 404:<br>
-            Лабораторна робота №7 не знайдена
-        </h1>
+        <div id="draggable" style="width: 100px; height: 100px; background-color: red; position: absolute; top: 200px; left: 100px; margin-left: -50px; margin-top: -50px; cursor: move;">
+            Тягни мене
+        </div>
+
+
+        <section>
+            <h1>Підключення jQuery через CDN</h1>
+
+            <p>Підключення бібліотеки jQuery, jQuery UI, та стилі</p>
+            <pre><code class="language-html">&lt;link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css"&gt;
+&lt;script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+            <p>Далі можна використовувати jQuery та jQuery UI в середині HTML або в окремому файлі</p>
+            <pre><code class="language-javascript">$( function() {
+    $( "#draggable" ).draggable();
+} );</code></pre>
+
+        </section>
+
+        <section>
+            <h1>Приклади використання джейКуері юай</h1>
+
+            <h3>Акордеон</h3>
+            <div id="accordion">
+                <h3>Заголовок</h3>
+                <div>Вміст</div>
+                <h3>Другий заголовок</h3>
+                <div>тут може бути що завгодно, наприклад кіт: <img src="https://media.tenor.com/SuVGs-GL7RoAAAAj/shocked-shocked-cat.gif" alt="cat-gif"></div>
+                <h3>А тут прикол</h3>
+                <div>
+                    <div id="accordion2">
+                        <h3>Акордеон в Акордеоні</h3>
+                        <div>Ось це так несподіванка</div>
+                        <h3>Ось це так несподіванка</h3>
+                        <div>Акордеон в Акордеоні</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <h3>Вибір дати</h3>
+            <p>Оберіть дату: <input type="text" id="datepicker"></p>
+
+
+            <h3>Меню</h3>
+            <ul id="menu">
+                <li>
+                    <div><span class="ui-icon ui-icon-disk"></span>Один</div>
+                </li>
+                <li>
+                    <div>Два</div>
+                </li>
+                <li>
+                    <div>Три</div>
+                    <ul>
+                        <li>
+                            <div>підпункт 1</div>
+                        </li>
+                        <li>
+                            <div>підпункт 2</div>
+                        </li>
+                        <li>
+                            <div>підпункт 3</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Чотири</div>
+                </li>
+                <li>
+                    <div>П'ять</div>
+                </li>
+            </ul>
+
+            <h3>Вкладки</h3>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#fragment-1">Вкладка 1</a></li>
+                    <li><a href="#fragment-2">html</a></li>
+                    <li><a href="#fragment-3">js</a></li>
+                </ul>
+                <div id="fragment-1">
+                    Вкладки можна використовувати для організації контенту на сторінці.
+                </div>
+                <div id="fragment-2">
+                    <pre><code class="language-html">&lt;div id="tabs"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#fragment-1"&gt;Вкладка 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#fragment-2"&gt;html&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#fragment-3"&gt;js&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id="fragment-1"&gt;
+        Вкладки можна використовувати для організації контенту на сторінці.
+    &lt;/div&gt;
+    &lt;div id="fragment-2"&gt;
+        &lt;pre&gt;&lt;code class="language-html"&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;div id="fragment-3"&gt;
+        &lt;pre&gt;&lt;code class="language-js"&gt;$("#tabs").tabs();&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div id="fragment-3">
+                    <pre><code class="language-js">$("#tabs").tabs();</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>Tiny Slider</h1>
+            <div class="my-slider">
+                <div><img src="https://img.freepik.com/free-photo/landscape-with-lake-sunset_395237-259.jpg?t=st=1761695100~exp=1761698700~hmac=3ad563cf8b84125851fb1ce2379c488976da0f90965d2393c5542d5b92dccab5&w=740" alt="1"></div>
+                <div><img src="https://img.freepik.com/free-photo/breathtaking-view-zugspitze-lake-surrounded-with-forests-eibsee_181624-13202.jpg?t=st=1761695101~exp=1761698701~hmac=7cc51946d621501f024db382dc4a462f377d16da22b74ba2e6fb9d044b4d0b80&w=740" alt="2"></div>
+                <div><img src="https://img.freepik.com/free-photo/river-surrounded-by-forests-cloudy-sky-thuringia-germany_181624-30863.jpg?t=st=1761695104~exp=1761698704~hmac=a3b5ea3ffa27a7014c5854cf36a9e1b4ee6539a9741c35bfdd42e259c1f3c12d&w=740" alt="3"></div>
+                <div><img src="https://img.freepik.com/free-photo/lone-tree_181624-46361.jpg?t=st=1761695105~exp=1761698705~hmac=1811b98b99eec45aa93391bc791776394726767e106799b5d114ad570eb8a57f&w=740" alt="4"></div>
+                <div><img src="https://img.freepik.com/free-photo/pier-lake-hallstatt-austria_181624-44201.jpg?t=st=1761695111~exp=1761698711~hmac=d3b83053523fa210f769fbfbf528c64798bad83f58c823e02e08dbbfd6249cf9&w=740" alt="5"></div>
+        </section>
+
+        <section>
+            <h1>VFX-JS</h1>
+            <h1>.......................</h1>
+        </section>
+
+        <section>
+            <h1>Галерея з масштабуванням</h1>
+
+            <a class="test-popup-link" href="http://farm4.staticflickr.com/3763/9204547649_0472680945_o.jpg">Open popup</a>
+
+            <div class="zoom-gallery">
+                <!-- Width/height ratio of thumbnail and the main image must match to avoid glitches.
+                 If ratios are different, you may add CSS3 opacity transition to the main image to make the change less noticable. -->
+                
+                <a href="http://farm4.staticflickr.com/3763/9204547649_0472680945_o.jpg"
+                    data-source="http://500px.com/photo/32736307" title="Into The Blue" style="width:193px;height:125px;">
+                    <img src="http://farm4.staticflickr.com/3763/9204547649_7de96ee188_t.jpg" width="193" height="125">
+                </a>
+                <a href="http://farm3.staticflickr.com/2856/9207329420_7f2a668b06_o.jpg"
+                    data-source="http://500px.com/photo/32554131" title="Light Sabre" style="width:82px;height:125px;">
+                    <img src="http://farm3.staticflickr.com/2856/9207329420_e485948b01_t.jpg" width="82px" height="125">
+                </a>
+            </div>
+        </section>
+
     </main>
+
+
+    <script src="../shared/js/head.js"></script>
+    <script src="../shared/js/navbar.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script type="module">
+        var slider = tns({
+                container: '.my-slider',
+                items: 1,
+                slideBy: 'page',
+                autoplay: true
+            });
+    </script>
+    <script type="module" src="./js/vfx_scroll.js"></script>
+    <script src="./js/jquery.magnific-popup.min.js"></script>
 </body>
 </html>
