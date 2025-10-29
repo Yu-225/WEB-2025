@@ -1,0 +1,25 @@
+
+
+#menu {
+    max-width: 300px;
+}
+
+
+.my-slider-wrapper {
+    background-color: aquamarine;
+    width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-slider {
+    overflow: hidden;
+    text-align: center;
+}
+
+.zoom-gallery {
+    text-align: center;
+}
