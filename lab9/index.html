@@ -1,17 +1,152 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
+
 <head>
     <script src="../shared/js/head.js"></script>
-    <script src="../shared/js/navbar.js"></script>
+    <title>Бандерогусь</title>
+    
+    <!-- GOOGLE FONTS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- GOOGLE FONTS -->
 </head>
-<body>
-    <div id="navbar-container"></div>
 
+<body>
+    <!-- NAVBAR -->
+    <div id="navbar-container"></div>
     <main>
-        <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
-            Помилка 404:<br>
-            Лабораторна робота №9 не знайдена
-        </h1>
+        <h2>Завдання 1 - HTML</h2>
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-info">
+                <div class="hero-logo">
+                    <img src="/lab3/img/logo.svg" alt="logo">
+                    <p class="logo-text">Школа підготовки IT-спеціалістів</p>
+                </div>
+                <div class="hero-card">
+                    <p class="hero-evning">Доброго вечора, ми з України</p>
+                    <p class="hero-subtitle">На старт. Увага. Полетіли!</p>
+                    <h1 class="hero-title">Бандерогусь</h1>
+                    <p class="hero-text">Спеціальний бойовий гусак із біолабораторій України. Пишаюся своїми подвигами,
+                        бороню Батьківщину та підтримую позитивний дух народу. Слава Україні!
+                    </p>
+                    <button class="btn">Запустити гуся</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/lab3/img/gus.svg" alt="gus" style="transform: translateY(10px);">
+            </div>
+        </section>
+        <!-- HERO SECTION -->
+        <!-- FACTS SECTION -->
+        <section class="facts-section">
+            <img src="/lab3/img/trezub.svg" alt="тризуб">
+            <h2 class="facts-title">Цікаві факти про бандерогусей</h2>
+            <p class="facts-text">Зазвичай бандерогуси — виключно мирні птахи. Але у разі небезпеки можуть атакувати
+                ворога
+                системою надпотужного озброєння. Також нищать психологічно, активуючи високочастотне шипіння та
+                розмахування
+                крилами
+            </p>
+            <div class="facts-cards">
+                <div class="fact-card">
+                    <img src="/lab3/img/gus1.svg" alt="gus1">
+                    <h2 class="fact-card-title">Система навігації</h2>
+                    <p class="fact-card-text">Супутниковий GPS та ехолокатори розпізнають ворожу техніку навіть на етапі
+                        збірки
+                    </p>
+                </div>
+                <div class="fact-card">
+                    <img src="/lab3/img/gus2.svg" alt="gus2">
+                    <h2 class="fact-card-title">Очі-тепловізори</h2>
+                    <p class="fact-card-text">Допомагають виявити характер сигнатури об’єктів та значно підвищують
+                        точність
+                        удару
+                    </p>
+                </div>
+                <div class="fact-card">
+                    <img src="/lab3/img/gus3.svg" alt="gus3">
+                    <h2 class="fact-card-title">Байракрила</h2>
+                    <p class="fact-card-text">Можуть нести 2-4 керовані ракети, що вражають ціль на відстані «ніхріна
+                        собі»
+                        кілометрів
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- FACTS SECTION -->
+        <!-- TABLE SECTION -->
+        <section class="table-section">
+            <h2 class="table-section-title">Люди що вже запустили гуся</h2>
+            <table class="table">
+                <tr>
+                    <th>Ім'я</th>
+                    <th>Прізвище</th>
+                    <th>Вік</th>
+                    <th>Місто</th>
+                </tr>
+                <tr>
+                    <td>Іван</td>
+                    <td>Іваненко</td>
+                    <td>25</td>
+                    <td>Київ</td>
+                </tr>
+                <tr>
+                    <td>Марія</td>
+                    <td>Петренко</td>
+                    <td>30</td>
+                    <td>Львів</td>
+                </tr>
+                <tr>
+                    <td>Олександр</td>
+                    <td>Сидоренко</td>
+                    <td>28</td>
+                    <td>Одеса</td>
+                </tr>
+                <tr>
+                    <td>Анна</td>
+                    <td>Коваленко</td>
+                    <td>22</td>
+                    <td>Харків</td>
+                </tr>
+                <tr>
+                    <td>Володимир</td>
+                    <td>Ткаченко</td>
+                    <td>35</td>
+                    <td>Дніпро</td>
+                </tr>
+                <tr>
+                    <td>Ольга</td>
+                    <td>Бондаренко</td>
+                    <td>27</td>
+                    <td>Запоріжжя</td>
+                </tr>
+            </table>
+        </section>
+        <!-- TABLE SECTION -->
+        <!-- FOOTER -->
+        <footer class="footer">
+            <img src="/lab3/img/trezub.svg" alt="тризуб">
+            <h2 style="margin-top: 20px; font-size: 48px; font-weight: 600;">Перемога завжди за нами!</h2>
+            <p style="max-width: 875px; margin: 48px auto 0 auto;">Головна мета бандерогусей — служити гумору та доброті
+                нашого народу. Ми забезпечимо вашу посмішку у часи, коли вона так необхідна
+            </p>
+        </footer>
+        <!-- FOOTER -->
+        <h2>Завдання 2 - СSS</h2>
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="Правильний CSS!" />
+            </a>
+        </p>
     </main>
+    <script src="../shared/js/navbar.js"></script>
+    <script src="../shared/js/changeTitle.js"></script>
+    <script>changeTitle("Бандерогусь")</script>
 </body>
+
 </html>
