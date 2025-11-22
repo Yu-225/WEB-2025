@@ -7,11 +7,171 @@
 <body>
     <div id="navbar-container"></div>
 
+    <style>
+        h2 {
+            margin-top: 66px;
+            text-align: center;
+        }
+    </style>
+
     <main>
-        <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
-            Помилка 404:<br>
-            Лабораторна робота №11 не знайдена
-        </h1>
+        <!-- Завдання 1 - Діалогові вікна -->
+        <h2>Завдання 1 - Діалогові вікна</h2>
+
+        <p>alert, confirm, prompt</p>
+
+        <button onclick="task1Alert()">Alert</button>
+        <button onclick="task1Confirm()">confirm</button>
+        <button onclick="task1Prompt()">Prompt</button>
+        <!-- Завдання 1 - Діалогові вікна -->
+
+
+
+        <!-- Завдання 2 - Арифметичні вирази -->
+        <h2>Завдання 2 - Арифметичні вирази</h2>
+        
+        <h3>Калькулятор</h3>
+        <textarea name="task2TextArea" id="task2TextArea"></textarea>
+        <p id="task2Result">Результат:</p>
+        <button onclick="task2Calculate()">Обчислити</button>
+
+        <h3>Формула</h3>
+        <p>y = x * x + 1 - 12 * x / 3 * x * x - 1 + x + x + (-x) + 34 * x</p> 
+        <input type="text" id="task2InputX" placeholder="Введіть x">
+        <p id="task2Result2">Результат:</p>
+        <button onclick="task2Calculate2()">Обчислити</button>
+        <!-- Завдання 2 - Арифметичні вирази -->
+
+
+
+        <!-- Завдання 3 - Математика... -->
+        <h2>Завдання 3 - Математика... </h2>
+        <h3>Площа і периметр n-кутника</h3>
+        <input type="text" id="task3InputR" placeholder="Радіус кола">
+        <input type="text" id="task3InputN" placeholder="Кількість сторін">
+        <p id="task3Result">Результат:</p>
+        <button onclick="task3Calculate()">Обчислити</button>        
+        <!-- Завдання 3 - Математика... -->
+
+
+        
+        <!-- Завдання 4 - Динамічний вивід сторінки -->
+        <h2>Завдання 4 - Динамічний вивід сторінки</h2>
+        <h3>Додавання та видалення блоку</h3>
+        <button id="task4AddBtn" onclick="addBlock()">Додати блок</button>
+        <button id="task4RemoveBtn" onclick="removeBlock()">Видалити блок</button>
+        
+        <div id="task4Container"></div>
+        <!-- Завдання 4 - Динамічний вивід сторінки -->
     </main>
+
+
+    <script>
+        // Завдання 1 - Діалогові вікна
+        function task1Alert() {
+            alert("Це повідомлення з вікна alert!");
+        }
+        function task1Confirm() {
+            let userResponse = confirm("Це повідомлення з вікна confirm! Натисніть OK або Скасувати.");
+            if (userResponse) {
+                alert("Ви натиснули OK.");
+            } else {
+                alert("Ви натиснули Скасувати.");
+            }
+        }
+        function task1Prompt() {
+            let userInput = prompt("Це повідомлення з вікна prompt! Введіть своє ім'я:");
+            if (userInput !== null) {
+                alert("Ви ввели: " + userInput);
+            } else {
+                alert("Ви скасували введення.");
+            }
+        }
+        // Завдання 1 - Діалогові вікна
+
+
+
+        // Завдання 2 - Арифметичні вирази
+        function task2Calculate() {
+            let resultElement = document.getElementById("task2Result");
+            let input = document.getElementById("task2TextArea").value;
+            try {
+                let result = eval(input);
+                resultElement.innerText = "Результат: " + result;
+            } catch (e) {
+                resultElement.innerText = "Помилка: " + e.message;
+            }
+        }
+
+        function task2Calculate2() {
+            let resultElement = document.getElementById("task2Result2");
+            let x = parseInt(document.getElementById("task2InputX").value);
+            if (isNaN(x)) {
+                alert("Будь ласка, введіть дійсне число для x.");
+                return;
+            }
+            let y = x * x + 1 - 12 * x / 3 * x * x - 1 + x + x + (-x) + 34 * x;
+            resultElement.innerText = "Результат: y = " + y;
+        }
+        // Завдання 2 - Арифметичні вирази
+
+
+
+        // Завдання 3 - Математика...
+        function task3Calculate() {
+            let resultElement = document.getElementById("task3Result");
+            let r = parseFloat(document.getElementById("task3InputR").value);
+            let n = parseInt(document.getElementById("task3InputN").value);
+            if (isNaN(r) || isNaN(n) || n < 3) {
+                alert("Будь ласка, введіть дійсне число для радіуса і ціле число більше або рівне 3 для кількості сторін.");
+                return;
+            }
+            let perimeter = 2 * n * r * Math.sin(Math.PI / n);
+            let area = (n * r * r * Math.sin((2 * Math.PI) / n)) / 2;
+            resultElement.innerText = `Результат: Периметр = ${perimeter.toFixed(2)}, Площа = ${area.toFixed(2)}`;
+        }
+        // Завдання 3 - Математика...
+
+
+
+
+
+        // Завдання 4 — Динамічний вивід сторінки
+        const container = document.getElementById('task4Container');
+
+        function addBlock() {
+            const block = document.createElement('div');
+            block.className = 'block';
+
+            const randomNumber = Math.floor(Math.random() * 100);
+            const date = new Date();
+
+            block.innerHTML = `
+                <h3>Блок від ${date.toLocaleTimeString()}</h3>
+                <p>Випадкове число: ${randomNumber}</p>
+            `;
+
+            block.style.border = '1px solid black';
+            block.style.padding = '10px';
+            block.style.margin = '10px';
+            block.style.backgroundColor = '#f0f0f0';
+            block.style.borderRadius = '15px';
+
+
+
+
+            container.appendChild(block);
+        }
+
+        function removeBlock() {
+            const blocks = container.getElementsByClassName('block');
+            if (blocks.length > 0) {
+                container.removeChild(blocks[0]);
+            } else {
+                alert("Блоків немає для видалення!");
+            }
+        }
+        // Завдання 4 — Динамічний вивід сторінки
+    </script>
 </body>
 </html>
