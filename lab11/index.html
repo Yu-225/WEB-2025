@@ -126,8 +126,8 @@
                 alert("Будь ласка, введіть дійсне число для радіуса і ціле число більше або рівне 3 для кількості сторін.");
                 return;
             }
-            let perimeter = 2 * n * r * Math.sin(Math.PI / n);
-            let area = (n * r * r * Math.sin((2 * Math.PI) / n)) / 2;
+            let perimeter = n * (2 * r) * Math.tan(Math.PI / n);
+            let area = (n * Math.pow(r, 2) * Math.tan((Math.PI) / n));
             resultElement.innerText = `Результат: Периметр = ${perimeter.toFixed(2)}, Площа = ${area.toFixed(2)}`;
         }
         // Завдання 3 - Математика...
