@@ -7,11 +7,79 @@
 <body>
     <div id="navbar-container"></div>
 
+    <style>
+        h2 {
+            margin-top: 66px;
+            text-align: center;
+        }
+    </style>
+
     <main>
-        <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
-            Помилка 404:<br>
-            Лабораторна робота №12 не знайдена
-        </h1>
+        <!-- Завдання 1 - Оператори умовного переходу -->
+        <h2 style='text-align:center'>Завдання 1 -Використання оператора <strong>IF</strong></p>
+        <button onclick="task1Script()" >Запустити стрикпт</button>
+        <br>
+        <img src="https://media.tenor.com/1W-HKNvj8UoAAAAM/cat.gif" alt="cat" id="catImage" hidden>
+        <!-- Завдання 1 - Оператори умовного переходу -->
+
+
+        <!-- Завдання 2 - Оператори умовного переходу -->
+        <h2>Завдання 2 - знаходження найменшого числа</h2>
+        <textarea name="task2Textarea" id="task2Textarea">1, 2, 3, 4</textarea>
+        <p id="task2Result">Результат:</p>
+        <button onclick="task2Script()">Обчислити</button>
+        <!-- Завдання 2 - Оператори умовного переходу -->
+
+        
+        <!-- Завдання 3 - Оператори умовного переходу -->
+        <h2>Завдання 3 - Визначення дня тижня</h2>
+        <input type="number" id="task3Input" placeholder="Введіть число від 1 до 7">
+        <p id="task3Result">Результат:</p>
+        <button onclick="task3Script()">Визначити день тижня</button>
+        <!-- Завдання 3 - Оператори умовного переходу -->
+
+        
+        <!-- Завдання 4. Оператори циклу -->
+        <h2>Завдання 4 - Використання оператора циклі <b>For, While, Do while</b></h2>
+        <h3>For</h3>
+        <input type="number" id="task4InputFor" placeholder="Факторіал числа">
+        <p id="task4ResultFor">Результат for: </p>
+        <button onclick="task4For()">For</button>
+
+        <h3>While</h3>
+        <input type="number" id="task4InputWhile" placeholder="час в секундах">
+        <p id="task4ResultWhile">Результат while: </p>
+        <button onclick="task4While()">While</button>
+
+
+        <h3>Do While</h3>
+        <input type="number" id="task4InputDoWhile" placeholder="Мінімальне число (1-99)">
+        <p id="task4ResultDoWhile">Результат do while: </p>
+        <button onclick="task4DoWhile()">Do While</button>
+        <!-- Завдання 4. Оператори циклу -->
+
+
+        <!-- Завдання 5. Оператори циклу -->
+        <h2>Завдання 5 - Перебір елементів <b>For in</b></h2>
+        <p id="task5Result">Властивості об’єкта JSON:</p>
+        <button onclick="task5Script()">Запустити скрипт</button>
+        <!-- Завдання 5. Оператори циклу -->
+
+
+        <!-- Завдання 6. Оператори циклу -->
+        <h2>Завдання 6 - Оператори циклу</h2>
+        <p>Міні гра - Вгадай число</p>
+        <button onclick="task6Script()">Запустити скрипт</button>
+        <!-- Завдання 6. Оператори циклу -->
     </main>
+
+    <script src="../shared/js/utils.js"></script>
+    <script src="./js/task1.js"></script>
+    <script src="./js/task2.js"></script>
+    <script src="./js/task3.js"></script>
+    <script src="./js/task4.js"></script>
+    <script src="./js/task5.js"></script>
+    <script src="./js/task6.js"></script>
+
 </body>
 </html>
