@@ -1,17 +1,83 @@
 <!DOCTYPE html>
 <html lang="ua">
-<head>
-    <script src="../shared/js/head.js"></script>
-    <script src="../shared/js/navbar.js"></script>
-</head>
-<body>
-    <div id="navbar-container"></div>
+    <head>
+        <script src="../shared/js/head.js"></script>
+        <script src="../shared/js/navbar.js"></script>
+    </head>
+    <body>
+        <div id="navbar-container"></div>
 
-    <main>
-        <h1 style="font-size: 66px; text-align: center; margin-top: 20vh;">
-            Помилка 404:<br>
-            Лабораторна робота №13 не знайдена
-        </h1>
-    </main>
-</body>
+        <main>
+            <!-- Завдання 1 -->
+            <section>
+                <h2>Завдання 1 - Вбудовані функції (Date)</h2>
+                <div id="task1Result"></div>
+            </section>
+
+            <!-- Завдання 2 -->
+            <section>
+                <h2>Завдання 2 - Date з іншим прикладом</h2>
+                <div id="task2Result"></div>
+            </section>
+
+            <!-- Завдання 3 -->
+            <section class="section-third">
+                <h2>Завдання 3 - Функція користувача з аргументами</h2>
+                <input type="text" id="task3Input" placeholder="Ім'я" required>
+                <button onclick="task3()">Привітатись</button>
+                <div id="task3Result"></div>
+            </section>
+
+            <!-- Завдання 4 -->
+            <section>
+                <h2>Завдання 4 - Функція повертає значення</h2>
+                <div id="task4Result"></div>
+            </section>
+
+            <!-- Завдання 5 -->
+            <section>
+                <h2>Завдання 5 - Параметри за замовчуванням</h2>
+                <input type="text" id="imageUrlInput" placeholder="URL зображення (не обов'язково)">
+                <button onclick="task5()">Додати зображення</button>
+                <div id="task5Result"></div>
+            </section>
+
+            <!-- Завдання 6 -->
+            <section>
+                <h2>Завдання 6 - Функція як аргумент</h2>
+
+                <input type="text" id="task6num1" placeholder="Число 1" required>
+                <select id="task6operation">
+                    <option value="add">додати</option>
+                    <option value="sub">відняти</option>
+                    <option value="mul">помножити</option>
+                    <option value="div">поділити</option>
+                </select>
+                <input type="text" id="task6num2" placeholder="Число 2" required>
+                <div id="task6Result"></div>
+                <button onclick="task6()">Обчислити з колбеком</button>
+            </section>
+
+            <!-- Завдання 7 -->
+            <section>
+                <h2>Завдання 7 - Функція як змінна</h2>
+                <div id="task7Result"></div>
+            </section>
+
+            <!-- Завдання 8 -->
+            <section>
+                <h2>Завдання 8 - Масив arguments</h2>
+                <div id="task8Result"></div>
+            </section>
+        </main>
+
+        <script src="js/task1.js"></script>
+        <script src="js/task2.js"></script>
+        <script src="js/task3.js"></script>
+        <script src="js/task4.js"></script>
+        <script src="js/task5.js"></script>
+        <script src="js/task6.js"></script>
+        <script src="js/task7.js"></script>
+        <script src="js/task8.js"></script>
+    </body>
 </html>
