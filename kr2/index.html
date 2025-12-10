@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <script src="shared/js/navbar.js"></script>
+    <script src="shared/js/head.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контрольна робота 2</title>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <style>
+        .t1,
+        .t2,
+        .t3 {
+            margin-top: 100px;
+        }
+    </style>
+
+    <main>
+        <div class="t1">
+            <button onclick="task1()">Запустити завдання 1</button>
+            <div id="output1"></div>
+        </div>
+
+        <div class="t2" id="t2">
+            <button onclick="task2()">Запустити завдання 2</button>
+            <div id="output2"></div>
+        </div>
+
+        <div class="t3" id="t3">
+            <button onclick="task3()">Запустити завдання 3</button>
+            <div id="output3"></div>
+        </div>
+
+
+    </main>
+
+
+
+
+    <script>
+        document.getElementById("t2").hidden = true;
+        document.getElementById("t3").hidden = true;
+
+        var name;
+        var coutnries;
+
+        function task1() {
+            let city = (prompt("Введіть місто:"));
+            name = prompt("Введіть ваше ім'я:");
+            let text = `<p>Шановний(на) ${name}, ви живете у чудовому місті ${city}</p>`;
+            let elem = document.getElementById("output1")
+
+            elem.innerHTML = text;
+            elem.style.fontSize = "24px";
+            elem.style.color = "#f0f";
+            elem.style.fontStyle = "italic";
+
+            document.getElementById("t2").hidden = false;
+        }
+
+
+        function task2() {
+            coutnries = [];
+            let num = parseInt(prompt("Введіть кількість країн які ви б хотіли відвідати"))
+            let elem = document.getElementById("output2")
+
+            for (let i = 0; i < num; i++) {
+                coutnries.push(prompt(`Веедіть країну ${i + 1}: `))
+            }
+
+            elem.innerHTML = `<p> ${coutnries} </p>`
+
+            document.getElementById("t3").hidden = false;
+        }
+
+
+        function task3() {
+            var rightChoise = coutnries[Math.floor(Math.random() * coutnries.length)];
+            let userChoise = prompt(`Спробуйде вгадати куди ${name} поїде в першу чергу. Варіанти - ${coutnries}`)
+            let elem = document.getElementById("output3")
+
+            if (userChoise == rightChoise) {
+                elem.innerHTML = "<p>Ура, ви вгадали )</p>"
+                window.open("https://www.piligrim.lviv.ua/", "_blank");
+            } else {
+                userChoise = prompt(`Нє, не вгадали, спробуйте що раз. Варіанти - ${coutnries}`)                
+                if (userChoise == rightChoise) {
+                    elem.innerHTML = "<p>Ура, ви вгадали )</p>"
+                    window.open("https://www.piligrim.lviv.ua/", "_blank");
+                } else {
+                    elem.innerHTML = `<p>Правильна відповідь була - ${rightChoise}<br>Нічого страшоного, сходіть на коктельчик і відпочильте, і тоді спробуйде ще раз )</p>`
+                    window.open("https://malevich-club.com/", "_blank");
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
